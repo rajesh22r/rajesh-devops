@@ -2,8 +2,8 @@
 
 
 
-echo " ramesh: hi suresh how are you?"
+echo " ratan: hi suresh how are you?"
 echo " suresh : hi ramesh im fine "
 echo " ramesh : suresh what are you doing"
-echo " suresh : ramesh im watching tv"
+echo " suri : ramesh im watching tv"
 
