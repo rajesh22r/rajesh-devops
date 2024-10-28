@@ -1,9 +1,9 @@
 #!/bin/bash
-person1=$1
-person2=$2
+PERSON1=$1
+PERSON2=$2
 
 
-echo " $person1: hi $person2 how are you?"
-echo " $person2 : hi $person1 im fine "
-echo " $person1 : $person2 what are you doing"
-echo " $person2 : $person1 im watching tv"
+echo " $PERSON1: hi $PERSON2 how are you?"
+echo " $PERSON2 : hi $PERSON1 im fine "
+echo " $PERSON1 : $PERSON2 what are you doing"
+echo " $PERSON2 : $PERSON1 im watching tv"
