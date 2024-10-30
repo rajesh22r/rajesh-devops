@@ -15,9 +15,9 @@ Y="\e[33m"
 validate (){
     if [ $1 -ne 0 ]
     then 
-       echo "$2 is $R failed.. $N check it "
+       echo -e "$2 is $R failed.. $N check it "
     else 
-       echo " $2 is $G success "
+       echo -e " $2 is $G success "
     fi
 }
 dnf list installed git
