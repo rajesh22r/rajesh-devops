@@ -17,17 +17,20 @@ validate (){
     then 
        echo -e "$2 is $R failed.. $N check it "
     else 
-       echo -e " $2 is $G success "
+       echo -e " $2 is $G success $N"
     fi
 }
 
 
-dnf list installed $package
-if [ $? -ne 0 ]
-then 
-   echo "$package is not installed, going to install it"
-   dng install $package -y
+for package in $@
+do 
+   dnf list installed $package
+   if [ $? -ne 0 ]
+   then 
+     echo "$package is not installed, going to install it"
+     dnf install $package -y
    validate $? "installing $package"
-else 
+   else 
    echo "$package is already installed"
-fi
+   fi
+ done  
