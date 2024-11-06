@@ -9,7 +9,7 @@ mkdir -p $LOG_FOLDER
 userid=$(id -u)
 if [ $userid -ne 0 ]
 then 
-  echo "$R please run through root privileges $N"
+  echo -e "$R please run through root privileges $N"
   exit 1
 fi
 
@@ -42,10 +42,10 @@ do
    dnf list installed $package &>>$LOG_FILE
    if [ $? -ne 0 ]
    then 
-     echo "$R $package is not installed, $N going to install it" | tee -a $LOG_FILE
+     echo -e "$R $package is not installed, $N going to install it" | tee -a $LOG_FILE
      dnf install $package -y &>>$LOG_FILE
    validate $? "installing $package"
    else 
-   echo "$Y $package is already installed"$N  | tee -a $LOG_FILE
+   echo -e "$Y $package is already installed"$N  | tee -a $LOG_FILE
    fi
  done  
