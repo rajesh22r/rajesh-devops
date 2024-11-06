@@ -21,22 +21,31 @@ Y="\e[33m"
 validate (){
     if [ $1 -ne 0 ]
     then 
-       echo -e "$2 is $R failed.. $N check it " &>>$LOG_FILE
+       echo -e "$R $2 is  failed.. $N check it " | tee -a $LOG_FILE
     else 
-       echo -e " $2 is $G success $N" &>>$LOG_FILE
+       echo -e " $G $2 is  success $N" | tee -a $LOG_FILE
     fi
 }
+USAGE(){
 
+echo -e "$R USAGE : $N sudo sh 15-redirectors.sh package1 package2 "
+exit 1
 
+}
+if [ $# -eq 0 ]
+then 
+  USAGE
+fi
+echo "script started executing at : $(date)" | tee -a $LOG_FILE
 for package in $@
 do 
    dnf list installed $package &>>$LOG_FILE
    if [ $? -ne 0 ]
    then 
-     echo "$package is not installed, going to install it" &>>$LOG_FILE
+     echo "$R $package is not installed, $N going to install it" | tee -a $LOG_FILE
      dnf install $package -y &>>$LOG_FILE
    validate $? "installing $package"
    else 
-   echo "$package is already installed" &>>$LOG_FILE
+   echo "$Y $package is already installed"$N  | tee -a $LOG_FILE
    fi
  done  
