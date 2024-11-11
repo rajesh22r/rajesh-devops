@@ -5,7 +5,7 @@ failure(){
 
 }
 
-trap ' "$LINENO" "$BASH_COMMAND" ' ERR
+trap ' failure "$LINENO" "$BASH_COMMAND" ' ERR
 echo "hello world"
 echoo "hello world failure"
 echo "hello aftr failure"
