@@ -1,11 +1,6 @@
 #!/bin/bash
 set -e
-failure(){
-    echo "failed at line $1 : $2"
-
-}
-
-trap ' failure "$LINENO" "$BASH_COMMAND" ' ERR
+trap '' ERR
 echo "hello world"
 echoo "hello world failure"
 echo "hello aftr failure"
