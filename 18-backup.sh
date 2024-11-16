@@ -27,11 +27,11 @@ fi
 
 if [ ! -d $DEST_DIR ]
 then 
-    echo " $SOURCE_DIR does not exist.... please check "
+    echo " $DEST_DIR does not exist.... please check "
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
-
+echo "files : $FILES"
 if [ ! -z $FILES ]
 then 
    echo "Files are found "
