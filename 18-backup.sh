@@ -56,4 +56,5 @@ then
    fi
 else 
    echo "no files older than $DAYS"
+fi
 
