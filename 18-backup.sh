@@ -30,7 +30,7 @@ then
     echo " $DEST_DIR does not exist.... please check "
 fi
 
-FILES=$( find $SOURCE_DIR -name "*.log" -mtime $DAYS )
+FILES=$(find /home/ec2-user/apps  -name "*.log" -mtime $DAYS )
 echo "files : $FILES"
 if [ ! -z $FILES ]
 then 
