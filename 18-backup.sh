@@ -35,25 +35,7 @@ echo "files : $FILES"
 if [ ! -z $FILES ]
 then 
    echo "Files are found "
-   ZIP_FILE=$DEST_DIR/app-logs-$TIMESTAMP.zip
-   find $SOURCE_DIR -name "*.log" -mtime $DAYS | zip "$ZIP_FILE" -@
    
-   if [ -f $ZIP_FILE ]
-   then 
-    echo -e "$G succesfully $N zipped files older than $DAYS"
-
-    while IFS= read -r file
-    do 
-
-     echo "deleting file : $file"
-     rm -rf $file
-
-
-     done <<< $FILES
-   else
-    echo "Zipping the file is failed"
-    exit 1
-   fi
 else 
    echo "no files older than $DAYS"
 fi
