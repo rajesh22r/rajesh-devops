@@ -2,6 +2,10 @@
 
 DISK_USAGE=$(df -hT | grep xfs)
 DISK_THRESHOLD=5
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+Y="\e[33m"
 
 
 while IFS= read -r file
@@ -14,6 +18,6 @@ do
    if [ $USAGE -ge $DISK_THRESHOLD ]
 
   then
-     echo "$partition is more than $DISK_THRESHOLD CURRENT VALUE : $USAGE .. PLEASE CHECK"
+     echo -e  " $G $partition $N is more than $DISK_THRESHOLD... $Y CURRENT VALUE $N : $USAGE .. PLEASE CHECK"
   fi
   done <<< $DISK_USAGE
