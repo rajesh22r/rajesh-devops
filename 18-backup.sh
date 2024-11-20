@@ -35,7 +35,7 @@ FILES=$( find $SOURCE_DIR -name "*.log" -mtime $DAYS )
 echo "files : $FILES"
 
 
-if [ ! -z $FILES ]
+if [[ ! -z $FILES ]]
 then 
    echo "Files are found "
    ZIP_FILE=$DEST_DIR/apps-$TIMESTAMP.zip
